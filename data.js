@@ -113,13 +113,21 @@ const icone = [
 	}
 ];
 
+
 let container = document.querySelector(".container");
 for (let i = 0; i < 16; i++) {
 
-    const sfondo = document.createElement("div");
+    let sfondo = document.createElement("div");
     sfondo.classList.add("sfondo");
     container.append(sfondo);
 
+	let icona = document.createElement("i");
+	/* console.log(icona) */
+
+	icona.classList.add(icone[i].family);
+    icona.classList.add(icone[i].prefix + icone[i].name);
+	icona.classList.add(icone[i].color);
+    sfondo.append(icona);
 
     let nomiEl = icone[i];
     let text = document.createElement("h3");
@@ -127,3 +135,4 @@ for (let i = 0; i < 16; i++) {
     text.innerText = nomiEl.name;
 
 };
+

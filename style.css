@@ -6,7 +6,7 @@
 
 .sfondo {
     background-color: aqua;
-    height: 200px;
+    height: 140px;
     width: 18%;
     margin: 10px;
 }
@@ -16,4 +16,16 @@
     margin: auto;
     display: flex;
     flex-wrap: wrap;
+}
+
+.blue{
+    color: blue;
+}
+
+.green{
+    color: green;
+}
+
+.orange{
+    color: orange;
 }
