@@ -126,12 +126,12 @@ function genera(array) {
 
 		let icona = document.createElement("i");
 	
-		icona.classList.add(icone[i].family);
-		icona.classList.add(icone[i].prefix + icone[i].name);
-		icona.classList.add(icone[i].color);
+		icona.classList.add(array[i].family);
+		icona.classList.add(array[i].prefix + array[i].name);
+		icona.classList.add(array[i].color);
 		sfondo.append(icona);
 	
-		let nomiEl = icone[i];
+		let nomiEl = array[i];
 		let text = document.createElement("h3");
 		sfondo.append(text);
 		text.innerText = nomiEl.name;
@@ -161,6 +161,5 @@ function (){
     else {
         genera(icone);
     }
-}
-);
+});
 
