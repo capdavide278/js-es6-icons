@@ -115,24 +115,52 @@ const icone = [
 
 
 let container = document.querySelector(".container");
-for (let i = 0; i < 16; i++) {
 
-    let sfondo = document.createElement("div");
-    sfondo.classList.add("sfondo");
-    container.append(sfondo);
+function genera(array) {
+	container.innerHTML = "";
+	for (let i = 0; i < array.length; i++) {
 
-	let icona = document.createElement("i");
-	/* console.log(icona) */
+		let sfondo = document.createElement("div");
+		sfondo.classList.add("sfondo");
+		container.append(sfondo);
 
-	icona.classList.add(icone[i].family);
-    icona.classList.add(icone[i].prefix + icone[i].name);
-	icona.classList.add(icone[i].color);
-    sfondo.append(icona);
+		let icona = document.createElement("i");
+	
+		icona.classList.add(icone[i].family);
+		icona.classList.add(icone[i].prefix + icone[i].name);
+		icona.classList.add(icone[i].color);
+		sfondo.append(icona);
+	
+		let nomiEl = icone[i];
+		let text = document.createElement("h3");
+		sfondo.append(text);
+		text.innerText = nomiEl.name;
+	
+	};
+}
 
-    let nomiEl = icone[i];
-    let text = document.createElement("h3");
-    sfondo.append(text);
-    text.innerText = nomiEl.name;
+genera(icone);
 
-};
+const selector = document.getElementById("card");
+
+selector.addEventListener("change",
+function (){
+    let selection = selector.value;
+    if (selection == "animals") {
+        const animals = icone.filter((Animali) => Animali.type === "animal");
+        genera(animals);
+    }
+    else if (selection == "vegetables") {
+        const vegetables = icone.filter((Vegetali) => Vegetali.type === "vegetable");
+        genera(vegetables);
+    }
+    else if (selection == "users") {
+        const users = icone.filter((Users) =>Users.type === "user");
+        genera(users);
+    }
+    else {
+        genera(icone);
+    }
+}
+);
 

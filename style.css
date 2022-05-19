@@ -4,6 +4,18 @@
     box-sizing: border-box;
 }
 
+header{
+    width: 100%;
+    height: 100px;
+}
+
+section{
+    background-color: #29b1dd;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 50px;
+}
+
 .sfondo {
     background-color: aqua;
     height: 140px;
